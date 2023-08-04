@@ -10,12 +10,12 @@ def start_timer(minutes):
         minutes_remaining, seconds_remaining = divmod(
             minutes * 60 - seconds_elapsed, 60
         )
-        print(
-            f"{minutes_remaining:02}:{seconds_remaining:02}",
-            end="\r",
-        )
         if seconds_elapsed > minutes * 60:
             break
+        print(
+            f" {minutes_remaining:02}:{seconds_remaining:02}",
+            end="\r",
+        )
     notification.notify(title="Timer", message="Time's up!", timeout=5)
 
 

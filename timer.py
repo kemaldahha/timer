@@ -11,9 +11,9 @@ def start_timer(minutes):
             f"{minutes - (seconds_elapsed // 60 + 1):02.0f}:{60-seconds_elapsed}",
             end="\r",
         )
-        if (seconds_elapsed > minutes * 60) or (seconds_elapsed == 10):
+        if seconds_elapsed > minutes * 60:
             break
-    notification.notify(message="time's up!", timeout=5)
+    notification.notify(title="Timer", message="Time's up!", timeout=5)
 
 
 if __name__ == "__main__":

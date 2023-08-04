@@ -7,8 +7,11 @@ def start_timer(minutes):
     while True:
         time.sleep(1)
         seconds_elapsed = int(time.time() - t_start)
+        minutes_remaining, seconds_remaining = divmod(
+            minutes * 60 - seconds_elapsed, 60
+        )
         print(
-            f"{minutes - (seconds_elapsed // 60 + 1):02.0f}:{60-seconds_elapsed}",
+            f"{minutes_remaining:02}:{seconds_remaining:02}",
             end="\r",
         )
         if seconds_elapsed > minutes * 60:

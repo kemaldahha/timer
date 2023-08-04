@@ -1,1 +1,1 @@
-A very simple timer with desktop notification
+A very simple timer with desktop notification.
